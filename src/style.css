@@ -1,0 +1,59 @@
+body,html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 1fr 2.7fr;
+}
+
+.contentElements {
+    padding: 20px;
+}
+
+li {
+    color: white;
+}
+
+.modalContent {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    height: 800px;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+}
+
+.modalContent-right {
+    background: white;
+}
+
+.modalContent-left {
+    background: #E3EDFA;
+}
+
+.cardBox {
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    margin-bottom: 1rem;
+}
+
+.card-flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gird-gap: 20px;
+}
