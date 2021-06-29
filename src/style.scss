@@ -31,14 +31,14 @@ li {
     width: 1200px;
     display: grid;
     grid-template-columns: 1.5fr 3fr;
-}
 
-.modalContent-right {
-    background: white;
-}
-
-.modalContent-left {
-    background: #E3EDFA;
+    .modalContent-right {
+        background: white;
+    }
+    
+    .modalContent-left {
+        background: #E3EDFA;
+    }
 }
 
 .cardBox {
@@ -56,4 +56,4 @@ li {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gird-gap: 20px;
-}
+} 

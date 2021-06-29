@@ -5,7 +5,7 @@ import { ListContextProvider } from "./components/ListContext";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
-import './style.css';
+import './style.scss';
 
 const App = () => {
   return (

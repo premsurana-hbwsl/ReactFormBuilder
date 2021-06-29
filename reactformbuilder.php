@@ -20,7 +20,7 @@
  * Author URI:        https://club.wpeka.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wpadcenter
+ * Text Domain:       reactformbuilder
  * Domain Path:       /languages
  */
 
@@ -30,13 +30,23 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
+ * VFB one page app.
+ */
+function rfb_plugin_load_text_domain() {
+	load_plugin_textdomain( 'reactformbuilder', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'rfb_plugin_load_text_domain' );
+
+
+/**
  * Enqueue scripts.
  */
 function rfb_admin_enqueue_scripts() {
 	wp_enqueue_script(
 		'rfb-main',
 		plugin_dir_url( __FILE__ ) . 'dist/index.bundle.js',
-		array(),
+		array( 'wp-i18n' ),
 		time(),
 		true
 	);
@@ -68,4 +78,3 @@ function rfb_app() {
 }
 
 add_action( 'admin_menu', 'rfb_menu_page' );
-
