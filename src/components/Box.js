@@ -13,6 +13,7 @@ const style = {
     width: '100%',
     textAlign: 'center'
 };
+
 export const Box = function Box({ name }) {
     const {addToList, getCount} = useContext(ListContext);
     const [showModalBox, setShowModalBox] = useState(false);
