@@ -8,7 +8,7 @@ function ShowBoard() {
 	return (
 		<div className="showBoard">
 			{List.map(function( item, index ) {
-				return <Card key={index} item={item} currentlySaved={true}></Card>;
+				return <Card key={item.id} index={index} id={item.id} text={item.title} item={item} currentlySaved={true}></Card>;
 			})}
 		</div>
 	);

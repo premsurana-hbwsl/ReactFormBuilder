@@ -1,4 +1,5 @@
 import React from 'react';
+import update from 'immutability-helper';
 
 export class ListContextProvider extends React.Component {
     state = {
@@ -27,6 +28,22 @@ export class ListContextProvider extends React.Component {
         });
     }
 
+    moveCard = (dragIndex, hoverIndex) => {
+        const dragCard = this.state.List[dragIndex];
+        const newList = this.state.List.slice();
+
+        let newCardList = update(newList, {
+            $splice: [
+                [dragIndex, 1],
+                [hoverIndex, 0, dragCard],
+            ],
+        });
+
+        this.setState({
+            List: newCardList,
+        });
+    };
+
     getCount = () => {
         return this.state.count;
     }
@@ -48,7 +65,7 @@ export class ListContextProvider extends React.Component {
     render() {
         return (
             <ListContext.Provider
-                value={{ ...this.state, addToList: this.addToList, getCount: this.getCount, editList: this.editList, deleteItemInList: this.deleteItemInList }}
+                value={{ ...this.state, addToList: this.addToList, getCount: this.getCount, editList: this.editList, deleteItemInList: this.deleteItemInList, moveCard: this.moveCard }}
             >
                 {this.props.children}
             </ListContext.Provider>

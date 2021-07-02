@@ -54,11 +54,7 @@ const App = () => {
         */}
         <Switch>
           <Route exact path="/">
-          <ListContextProvider>
-            <DndProvider backend={HTML5Backend}>
-                <BaseComponent />
-              </DndProvider>
-            </ListContextProvider>
+          
           </Route>
           <Route path="/about">
             <div className="About">About</div>
@@ -67,6 +63,11 @@ const App = () => {
             <div className="dashboard">Dashboard</div>
           </Route>
         </Switch>
+        <ListContextProvider>
+          <DndProvider backend={HTML5Backend}>
+              <BaseComponent />
+            </DndProvider>
+        </ListContextProvider>
       </div>
     </Router>
   );
