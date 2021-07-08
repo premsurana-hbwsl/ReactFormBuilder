@@ -32,9 +32,9 @@ export default class ModalBox extends Component {
 
 	saveToList = () => {
 		if ( this.props?.newlyCreated ) {
-			const { addToList, getCount } = this.context;
+			const { addToList, generateId } = this.context;
 			const { setShowModalBox, componentName } = this.props;
-			const data = {...this.state, id: getCount(), componentName: componentName};
+			const data = {...this.state, id: generateId(), componentName: componentName};
 			addToList(data);
 			setShowModalBox(false);
 		}

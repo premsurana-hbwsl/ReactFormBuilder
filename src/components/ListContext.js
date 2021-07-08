@@ -62,10 +62,14 @@ export class ListContextProvider extends React.Component {
         });
     }
 
+    generateId = () => {   
+        return Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);        
+    }
+
     render() {
         return (
             <ListContext.Provider
-                value={{ ...this.state, addToList: this.addToList, getCount: this.getCount, editList: this.editList, deleteItemInList: this.deleteItemInList, moveCard: this.moveCard }}
+                value={{ ...this.state, addToList: this.addToList, getCount: this.getCount, editList: this.editList, deleteItemInList: this.deleteItemInList, moveCard: this.moveCard, generateId: this.generateId }}
             >
                 {this.props.children}
             </ListContext.Provider>

@@ -68,7 +68,10 @@ export default function (props) {
         }),
     });
 
-    const opacity = isDragging ? 0 : 1;
+    const style = {
+        opacity: isDragging ? 0 : 1,
+        cursor: isDragging ? 'pointer' : 'move',
+    }
     drag(drop(ref));
 
     function removeModal() {
@@ -88,7 +91,7 @@ export default function (props) {
 
     const { item } = props;
     return (
-        <div ref={ref} className="cardBox" style={{opacity: opacity}}>
+        <div ref={ref} className="cardBox" style={style}>
             <div>{item.title}</div>
             <div className="card-flex">
                 <button onClick={addModal}>edit</button>
